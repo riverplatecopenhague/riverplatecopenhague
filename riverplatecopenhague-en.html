@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Plate Copenhague</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC0000;--blanco:#FFFFFF;--negro:#0D0D0D;--gris-oscuro:#1A1A1A;--gris-medio:#2A2A2A;--gris-texto:#AAAAAA; }
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--negro);color:var(--blanco);overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(204,0,0,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--blanco);letter-spacing:0.05em}
+  .nav-links{display:flex;gap:1.75rem;list-style:none}
+  .nav-links a{color:var(--gris-texto);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--rojo)}
+  .lang-btn{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:0.3rem 0.75rem;color:var(--gris-texto);text-decoration:none;transition:all 0.2s}
+  .lang-btn:hover{border-color:var(--rojo);color:var(--rojo)}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:80px 2rem 4rem}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(204,0,0,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(204,0,0,0.08) 0%,transparent 50%)}
+  .hero-stripes{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 42px)}
+  .hero-content{position:relative;z-index:1;text-align:center;max-width:800px}
+  .hero-banderas{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.5rem;font-size:1.6rem}
+  .escudo-placeholder{width:120px;height:120px;margin:0 auto 2rem;border-radius:50%;background:radial-gradient(circle,rgba(204,0,0,0.3),transparent);border:2px solid rgba(204,0,0,0.5);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .hero-titulo{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,10vw,7rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:0.5rem}
+  .hero-titulo span{color:var(--rojo);display:block}
+  .hero-lema{font-size:1rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gris-texto);margin-bottom:2rem}
+  .hero-desc{font-size:1.05rem;line-height:1.7;color:#CCCCCC;max-width:560px;margin:0 auto 2.5rem}
+  .hero-redes{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .hero-redes a{display:flex;align-items:center;gap:6px;padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:var(--gris-texto);text-decoration:none;font-size:0.8rem;letter-spacing:0.05em;transition:all 0.2s}
+  .hero-redes a:hover{border-color:var(--rojo);color:var(--rojo);transform:translateY(-2px)}
+  section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+  .section-label{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rojo);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+  .section-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--rojo)}
+  .section-titulo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:0.03em;margin-bottom:1.5rem;line-height:1}
+  .divider{border:none;border-top:1px solid rgba(255,255,255,0.07);margin:0}
+  .quienes-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .quienes-text p{color:#CCCCCC;line-height:1.8;font-size:1rem;margin-bottom:1rem}
+  .stat-row{display:flex;gap:2rem;margin-top:2rem}
+  .stat{text-align:center}
+  .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--rojo);display:block}
+  .stat-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gris-texto)}
+  .quienes-visual{display:flex;flex-direction:column;gap:1rem}
+  .info-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--rojo);border-radius:4px;padding:1rem 1.25rem}
+  .info-card h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gris-texto);margin-bottom:0.3rem}
+  .info-card p{font-size:0.95rem;color:var(--blanco)}
+  .futbol-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+  .partido-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.5rem}
+  .partido-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;margin-bottom:1rem;color:var(--rojo)}
+  .proximo-partido{background:linear-gradient(135deg,var(--gris-oscuro) 0%,rgba(204,0,0,0.08) 100%);border:1px solid rgba(204,0,0,0.3);border-radius:8px;padding:1.5rem 2rem;grid-column:span 2;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .proximo-info h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.4rem}
+  .proximo-info p{color:var(--gris-texto);font-size:0.9rem;line-height:1.6}
+  .proximo-badge{background:var(--rojo);color:var(--blanco);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;white-space:nowrap}
+  .resultados-tabla{width:100%;border-collapse:collapse}
+  .resultados-tabla td{padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.9rem;color:#CCCCCC}
+  .resultados-tabla td:last-child{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.05em;color:var(--blanco)}
+  .resultado-win{color:#6BBF6B !important}
+  .equipo-placeholder{width:100%;aspect-ratio:16/9;background:var(--gris-medio);border-radius:8px;border:2px dashed rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.85rem;gap:0.5rem}
+  .actividades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+  .actividad-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;transition:border-color 0.2s,transform 0.2s}
+  .actividad-card:hover{border-color:rgba(204,0,0,0.4);transform:translateY(-3px)}
+  .actividad-icon{font-size:1.8rem;margin-bottom:1rem}
+  .actividad-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.04em;margin-bottom:0.5rem}
+  .actividad-card p{font-size:0.88rem;color:var(--gris-texto);line-height:1.6}
+  .actividad-horario{margin-top:1rem;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rojo)}
+  .novedades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+  .novedad-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;transition:transform 0.2s}
+  .novedad-card:hover{transform:translateY(-3px)}
+  .novedad-img{width:100%;aspect-ratio:16/9;background:var(--gris-medio);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.8rem;text-align:center;padding:1rem}
+  .novedad-body{padding:1.25rem}
+  .novedad-fecha{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--rojo);margin-bottom:0.5rem}
+  .novedad-body h3{font-size:0.95rem;font-weight:500;line-height:1.4;color:var(--blanco)}
+  .cd-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:1.5rem}
+  .cd-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;text-align:center;transition:border-color 0.2s}
+  .cd-card:hover{border-color:rgba(204,0,0,0.4)}
+  .cd-foto{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+  .cd-foto-placeholder{width:100%;aspect-ratio:1;background:var(--gris-medio);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:rgba(255,255,255,0.2)}
+  .cd-info{padding:0.75rem 0.5rem}
+  .cd-nombre{font-size:0.82rem;font-weight:500;color:var(--blanco);line-height:1.3;margin-bottom:0.25rem}
+  .cd-cargo{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rojo)}
+  .galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.5rem}
+  .galeria-item{aspect-ratio:4/3;background:var(--gris-medio);border-radius:6px;overflow:hidden}
+  .galeria-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+  .galeria-item:hover img{transform:scale(1.05)}
+  .galeria-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.8rem;text-align:center;border:1px dashed rgba(255,255,255,0.08);border-radius:6px;padding:1rem}
+  .tienda-wrapper{background:var(--gris-oscuro);border:1px solid rgba(204,0,0,0.2);border-radius:8px;padding:3rem 2rem;text-align:center;margin-top:1.5rem}
+  .tienda-wrapper p{color:var(--gris-texto);margin-top:0.75rem;font-size:0.95rem}
+  .badge-pronto{display:inline-block;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);color:var(--rojo);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 1.2rem;border-radius:20px;margin-bottom:1rem}
+  .contacto-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:1.5rem}
+  .contacto-text p{color:#CCCCCC;line-height:1.8;margin-bottom:1rem}
+  .contacto-links{display:flex;flex-direction:column;gap:0.75rem}
+  .contacto-link{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:6px;text-decoration:none;color:var(--blanco);font-size:0.9rem;transition:all 0.2s}
+  .contacto-link:hover{border-color:var(--rojo);color:var(--rojo)}
+  .contacto-link-icon{font-size:1rem;width:20px;text-align:center}
+  footer{background:var(--gris-oscuro);border-top:1px solid rgba(255,255,255,0.06);padding:2rem}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;color:var(--gris-texto)}
+  .footer-copy{font-size:0.78rem;color:var(--gris-texto)}
+  .footer-redes{display:flex;gap:1.25rem}
+  .footer-redes a{color:var(--gris-texto);text-decoration:none;font-size:0.82rem;transition:color 0.2s}
+  .footer-redes a:hover{color:var(--rojo)}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+  @media(max-width:768px){.nav-links{display:none}.quienes-grid,.futbol-grid,.contacto-wrapper{grid-template-columns:1fr}.proximo-partido{grid-column:span 1;flex-direction:column}.actividades-grid,.novedades-grid{grid-template-columns:1fr}.cd-grid{grid-template-columns:repeat(3,1fr)}.galeria-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="nav-logo">
+    <div style="width:36px;height:36px;border-radius:50%;background:var(--rojo);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:0.7rem;">RPC</div>
+    <span class="nav-logo-text">River Plate Copenhague</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#football">Football</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#board">Board</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="riverplatecopenhague.html" class="lang-btn">ES</a>
+</nav>
+
+<div id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stripes"></div>
+  <div class="hero-content">
+    <div class="hero-banderas">🇦🇷 ❤️ 🇩🇰</div>
+    <!-- Replace with: <img src="escudo.png" style="width:120px;height:120px;margin:0 auto 2rem;display:block;filter:drop-shadow(0 0 30px rgba(204,0,0,0.4));animation:float 4s ease-in-out infinite;"> -->
+    <div class="escudo-placeholder">BADGE</div>
+    <h1 class="hero-titulo">River Plate<br><span>Copenhague</span></h1>
+    <p class="hero-lema">Our north is your colors</p>
+    <p class="hero-desc">Official branch of Club Atlético River Plate in Denmark. Argentine community, sport and culture in Copenhagen.</p>
+    <div class="hero-redes">
+      <a href="https://www.instagram.com/riverplatecopenhague/" target="_blank">ig Instagram</a>
+      <a href="https://www.facebook.com/River-Plate-Copenhague" target="_blank">f Facebook</a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank">in LinkedIn</a>
+      <a href="https://wa.me/4531840649" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section id="about" class="fade-in">
+  <div class="section-label">The branch</div>
+  <h2 class="section-titulo">Who we are</h2>
+  <div class="quienes-grid">
+    <div class="quienes-text">
+      <p>River Plate Copenhague is the official branch of Club Atlético River Plate in Denmark. We are a non-profit voluntary association founded by Argentine fans and friends of the club living in Copenhagen.</p>
+      <p>We organise sports activities, social events and represent the institution within the Argentine community in Denmark.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-num">2025</span><span class="stat-label">Founded</span></div>
+        <div class="stat"><span class="stat-num">+30</span><span class="stat-label">Members</span></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Sports</span></div>
+      </div>
+    </div>
+    <div class="quienes-visual">
+      <div class="info-card"><h4>Legal name</h4><p>River Plate Copenhague</p></div>
+      <div class="info-card"><h4>CVR</h4><p>45647153</p></div>
+      <div class="info-card"><h4>Entity type</h4><p>Voluntary Association (Forening)</p></div>
+      <div class="info-card"><h4>City</h4><p>Copenhagen, Denmark</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="football" class="fade-in">
+  <div class="section-label">Sport</div>
+  <h2 class="section-titulo">Football</h2>
+  <div class="futbol-grid">
+    <div class="partido-card" style="grid-row:span 2;">
+      <h3>The team</h3>
+      <div class="equipo-placeholder">
+        <!-- Replace with: <img src="equipo.jpg" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover;"> -->
+        <span style="font-size:2rem;">📷</span>
+        <span>Team photo coming soon</span>
+      </div>
+    </div>
+    <div class="partido-card">
+      <h3>Results — Season 2025</h3>
+      <table class="resultados-tabla">
+        <tbody>
+          <tr><td>MUSC Boldklub</td><td class="resultado-win">1 — 4</td></tr>
+          <tr><td>Round 2</td><td>—</td></tr>
+          <tr><td>Round 3</td><td>—</td></tr>
+          <tr><td>Round 4</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="proximo-partido">
+      <div class="proximo-info">
+        <h3>7 Elite vs. River Plate CPH</h3>
+        <p>Sunday May 18 · 11:00 am<br>Valby Idrætspark, Copenhagen</p>
+      </div>
+      <span class="proximo-badge">Next match</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="activities" class="fade-in">
+  <div class="section-label">Schedule</div>
+  <h2 class="section-titulo">Activities</h2>
+  <div class="actividades-grid">
+    <div class="actividad-card">
+      <div class="actividad-icon">⚽</div>
+      <h3>Football</h3>
+      <p>Mixed matches in Copenhagen. All levels welcome.</p>
+      <p class="actividad-horario">Saturdays · Time to be confirmed</p>
+    </div>
+    <div class="actividad-card">
+      <div class="actividad-icon">🏀</div>
+      <h3>Basketball</h3>
+      <p>Recreational basketball at Ørestad Streethal. All levels welcome.</p>
+      <p class="actividad-horario">Fridays 8:00 – 10:00 pm</p>
+    </div>
+    <div class="actividad-card">
+      <div class="actividad-icon">🎉</div>
+      <h3>Social events</h3>
+      <p>We watch River matches together, host asados and share Argentine culture.</p>
+      <p class="actividad-horario">As scheduled</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="news" class="fade-in">
+  <div class="section-label">Updates</div>
+  <h2 class="section-titulo">News</h2>
+  <div class="novedades-grid">
+    <div class="novedad-card">
+      <div class="novedad-img">📸 Event photo</div>
+      <div class="novedad-body"><p class="novedad-fecha">Coming soon</p><h3>The latest news from the branch will appear here.</h3></div>
+    </div>
+    <div class="novedad-card">
+      <div class="novedad-img">📸 Event photo</div>
+      <div class="novedad-body"><p class="novedad-fecha">Coming soon</p><h3>Activities, events and achievements from our community.</h3></div>
+    </div>
+    <div class="novedad-card">
+      <div class="novedad-img">📸 Event photo</div>
+      <div class="novedad-body"><p class="novedad-fecha">Coming soon</p><h3>Follow us on social media to stay up to date.</h3></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="board" class="fade-in">
+  <div class="section-label">Organisation</div>
+  <h2 class="section-titulo">Board of Directors</h2>
+  <div class="cd-grid">
+    <div class="cd-card"><div class="cd-foto-placeholder">SG</div><div class="cd-info"><p class="cd-nombre">Santiago Sanchez Godoy</p><p class="cd-cargo">President</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">DM</div><div class="cd-info"><p class="cd-nombre">Daiana Martínez Labriola</p><p class="cd-cargo">Vice-President 1st</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">FW</div><div class="cd-info"><p class="cd-nombre">Florencia Waiskopf</p><p class="cd-cargo">Vice-President 2nd</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">MR</div><div class="cd-info"><p class="cd-nombre">Mariano Remírez</p><p class="cd-cargo">Secretary</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">JF</div><div class="cd-info"><p class="cd-nombre">Juan Ignacio Farina</p><p class="cd-cargo">Treasurer</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">II</div><div class="cd-info"><p class="cd-nombre">Iván Insaurralde</p><p class="cd-cargo">Board member</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">MB</div><div class="cd-info"><p class="cd-nombre">Martín Büchel</p><p class="cd-cargo">Board member</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">DS</div><div class="cd-info"><p class="cd-nombre">Damian Schipani</p><p class="cd-cargo">Board member</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">—</div><div class="cd-info"><p class="cd-nombre">Coming soon</p><p class="cd-cargo">Board member</p></div></div>
+    <div class="cd-card"><div class="cd-foto-placeholder">—</div><div class="cd-info"><p class="cd-nombre">Coming soon</p><p class="cd-cargo">Board member</p></div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="gallery" class="fade-in">
+  <div class="section-label">Institutional memory</div>
+  <h2 class="section-titulo">Gallery</h2>
+  <div class="galeria-grid">
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 1</div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 2</div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 3</div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 4</div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 5</div></div>
+    <div class="galeria-item"><div class="galeria-placeholder">Photo 6</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="shop" class="fade-in">
+  <div class="section-label">Merchandise</div>
+  <h2 class="section-titulo">Shop</h2>
+  <div class="tienda-wrapper">
+    <div class="badge-pronto">Coming soon</div>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.05em;">Jerseys, scarves and more</h3>
+    <p>Our online shop is coming soon. Follow us on social media to be the first to know.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact" class="fade-in">
+  <div class="section-label">Contact</div>
+  <h2 class="section-titulo">Join us</h2>
+  <div class="contacto-wrapper">
+    <div class="contacto-text">
+      <p>Are you a River Plate fan living in Denmark? Get in touch — we are an open community and always happy to welcome new members.</p>
+      <p>You can also find us at our weekly football and basketball sessions in Copenhagen.</p>
+    </div>
+    <div class="contacto-links">
+      <a href="mailto:riverplatecopenhague@gmail.com" class="contacto-link"><span class="contacto-link-icon">✉</span><span>riverplatecopenhague@gmail.com</span></a>
+      <a href="https://wa.me/4531840649" target="_blank" class="contacto-link"><span class="contacto-link-icon">💬</span><span>WhatsApp +45 31 84 06 49</span></a>
+      <a href="https://www.instagram.com/riverplatecopenhague/" target="_blank" class="contacto-link"><span class="contacto-link-icon">ig</span><span>Instagram</span></a>
+      <a href="https://www.facebook.com/River-Plate-Copenhague" target="_blank" class="contacto-link"><span class="contacto-link-icon">f</span><span>Facebook</span></a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank" class="contacto-link"><span class="contacto-link-icon">in</span><span>LinkedIn</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">River Plate Copenhague — CVR 45647153</span>
+    <span class="footer-copy">© 2025 River Plate Copenhague. Voluntary Association.</span>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/riverplatecopenhague/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/River-Plate-Copenhague" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
