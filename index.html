@@ -227,25 +227,183 @@
 <hr class="divider">
 
 <section id="futbol" class="fade-in">
+
   <div class="section-label">Deporte</div>
   <h2 class="section-titulo">Fútbol</h2>
- <div class="futbol-grid">
-  <div class="partido-card">
-    <h3>El equipo</h3>
-    <img src="equipo_futbol.jpg"
-         alt="Equipo River Plate Copenhague"
-         style="width:100%;border-radius:8px;">
+
+  <style>
+    #futbol .temporada-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    #futbol .temporada-foto img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    #futbol .temporada-foto figcaption {
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    #futbol .temporada-label {
+      color: #CC0000;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+
+    #futbol .temporada-posicion {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    #futbol .temporada-posicion strong {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 9vw, 8rem);
+      color: #CC0000;
+      line-height: 0.85;
+      font-weight: 400;
+    }
+
+    #futbol .temporada-posicion span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    #futbol .temporada-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    #futbol .temporada-stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.7rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    #futbol .temporada-stat span {
+      color: #AAAAAA;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #futbol .temporada-goles {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      color: #CCCCCC;
+      font-size: 0.9rem;
+    }
+
+    #futbol .temporada-goles strong {
+      color: white;
+    }
+
+    #futbol .temporada-cierre {
+      margin-top: 2rem;
+      padding-left: 1rem;
+      border-left: 3px solid #CC0000;
+      color: #CCCCCC;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    #futbol .temporada-cierre strong {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      #futbol .temporada-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      #futbol .temporada-posicion strong {
+        font-size: 6rem;
+      }
+    }
+  </style>
+
+  <div class="temporada-layout">
+
+    <!-- FOTO DEL EQUIPO -->
+    <figure class="temporada-foto">
+      <img src="equipo_futbol.jpg"
+           alt="Equipo de fútbol River Plate Copenhague">
+      <figcaption>
+        River Plate Copenhague · Temporada 2026
+      </figcaption>
+    </figure>
+
+    <!-- RESUMEN DE TEMPORADA -->
+    <div class="temporada-info">
+
+      <p class="temporada-label">
+        Liga DAI 2026 · Primera participación
+      </p>
+
+      <div class="temporada-posicion">
+        <strong>4.º</strong>
+        <span>PUESTO<br>FINAL</span>
+      </div>
+
+      <div class="temporada-stats">
+
+        <div class="temporada-stat">
+          <strong>10</strong>
+          <span>Victorias</span>
+        </div>
+
+        <div class="temporada-stat">
+          <strong>2</strong>
+          <span>Empates</span>
+        </div>
+
+        <div class="temporada-stat">
+          <strong>6</strong>
+          <span>Derrotas</span>
+        </div>
+
+      </div>
+
+      <div class="temporada-goles">
+        <span><strong>18</strong> partidos</span>
+        <span><strong>46</strong> goles a favor</span>
+        <span><strong>31</strong> en contra</span>
+        <span><strong>+15</strong> diferencia</span>
+      </div>
+
+      <p class="temporada-cierre">
+        Cerramos nuestra primera temporada con
+        <strong>nueve partidos consecutivos sin perder</strong>,
+        incluyendo siete victorias y dos empates.
+      </p>
+
+    </div>
+
   </div>
 
-  <div class="partido-card">
-    <h3>Liga DAI 2026 · 4.º puesto</h3>
-    <p>Primera participación de River Plate Copenhague.</p>
-    <p>18 partidos: 10 ganados, 2 empatados y 6 perdidos.</p>
-    <p>46 goles a favor · 31 en contra · Diferencia +15.</p>
-    <p>Cerramos la temporada con nueve partidos
-       consecutivos sin perder: 7 victorias y 2 empates.</p>
-  </div>
-</div>
 </section>
 
 <hr class="divider">
