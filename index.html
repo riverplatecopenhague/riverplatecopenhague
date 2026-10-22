@@ -116,6 +116,40 @@
   .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
   .fade-in.visible{opacity:1;transform:translateY(0)}
   @media(max-width:768px){.nav-links{display:none}.quienes-grid,.futbol-grid,.contacto-wrapper{grid-template-columns:1fr}.proximo-partido{grid-column:span 1;flex-direction:column}.actividades-grid,.novedades-grid{grid-template-columns:1fr}.cd-grid{grid-template-columns:repeat(3,1fr)}.galeria-grid{grid-template-columns:repeat(2,1fr)}}
+.super-banner {
+  margin-top: 56px;
+  background: var(--gris-oscuro);
+  border-bottom: 2px solid var(--rojo);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.super-banner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.super-banner p {
+  color: #CCCCCC;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.super-banner a {
+  background: var(--rojo);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -132,11 +166,24 @@
     <li><a href="#novedades">Novedades</a></li>
     <li><a href="#cd">La CD</a></li>
     <li><a href="#galeria">Galería</a></li>
+    <li><a href="#tienda">Tienda</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <a href="riverplatecopenhague-en.html" class="lang-btn">EN</a>
 </nav>
-
+  
+<!-- INICIO BANNER TEMPORAL SUPERCLÁSICO -->
+<div class="super-banner">
+  <div>
+    <h2>SUPERCLÁSICO: BOCA VS. RIVER</h2>
+    <p>Domingo 1/11 · Desde las 15:00 · Partido 19:00</p>
+    <p>Monumental de Valby · Kulbaneparken · Kulbanevej 16</p>
+  </div>
+  <a href="https://wa.me/4531840649" target="_blank">
+    Sumate por WhatsApp
+  </a>
+</div>
+<!-- FIN BANNER TEMPORAL SUPERCLÁSICO -->
 <div id="inicio" class="hero">
   <div class="hero-bg"></div>
   <div class="hero-stripes"></div>
@@ -182,45 +229,23 @@
 <section id="futbol" class="fade-in">
   <div class="section-label">Deporte</div>
   <h2 class="section-titulo">Fútbol</h2>
-  <div class="futbol-grid">
-    <div class="partido-card" style="grid-row:span 2;">
-      <h3>El equipo</h3>
-      <img src="equipo_futbol.jpg" style="width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:cover;">
-        <span>Nuestro equipo en la Copa Tango</span>
-      </div>
-    </div>
-    <div class="partido-card">
-      <h3>Resultados — Liga DAI 2026</h3>
-      <table class="resultados-tabla">
-        <tbody>
-          <tr><td>Amager IF vs. River CPH</td><td style="color:#CC6666;">2 — 1</td></tr>
-          <tr><td>River CPH vs. Hafnia FC</td><td class="resultado-win">4 — 3</td></tr>
-          <tr><td>Central Cordoba vs. River CPH</td><td style="color:#CC6666;">2 — 1</td></tr>
-          <tr><td>River CPH vs. DR Byen</td><td style="color:#CC6666;">0 — 3</td></tr>
-          <tr><td>MUSC Boldklub vs. River CPH</td><td class="resultado-win">1 — 4</td></tr>
-          <tr><td>7 Elite vs. River CPH</td><td class="resultado-draw">X — X</td></tr>
-          <tr><td>River CPH vs. Fodbold For Alle</td><td class="resultado-win">5 — 0</td></tr>
-          <tr><td>San Lorenzo CPH vs. River CPH</td><td style="color:#CC6666;">1 — 0</td></tr>
-          <tr><td>River CPH vs. MK Service</td><td style="color:#CC6666;">2 — 7</td></tr>
-          <tr><td>River CPH vs. Amager IF</td><td class="resultado-win">3 — 2</td></tr>
-          <tr><td>Hafnia FC vs. River CPH</td><td class="resultado-win">1 — 5</td></tr>
-          <tr><td>River CPH vs. Central Córdoba</td><td class="resultado-draw">1 — 1</td></tr>
-          <tr><td>DR Byen vs. River CPH</td><td class="resultado-win">0 — 1</td></tr>
-          <tr><td> River CPH vs. MUSC Boldklub</td><td class="resultado-win">4 — 2</td></tr>
-          <tr><td>River CPH vs. 7 Elite</td><td class="resultado-win">3 — 0</td></tr>
-          <tr><td>Fodbold for Alle vs. River CPH</td><td class="resultado-draw">2 — 2</td></tr>
-          <tr><td>River CPH vs. San Lorenzo CPH</td><td class="resultado-win">6 — 2</td></tr>
-          <tr><td>MK Sevice vs. River CPH</td><td class="resultado-win">2 — 4</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="proximo-partido">
-      <div class="proximo-info">
-        <h3>Finalizamos 4tos!</h3>
-        <p>10 G - 2 E - 6 P<br>46 goles a favor - 31 en contra</p>
-      <span class="proximo-badge">Liga DAI</span>
-    </div>
+ <div class="futbol-grid">
+  <div class="partido-card">
+    <h3>El equipo</h3>
+    <img src="equipo_futbol.jpg"
+         alt="Equipo River Plate Copenhague"
+         style="width:100%;border-radius:8px;">
   </div>
+
+  <div class="partido-card">
+    <h3>Liga DAI 2026 · 4.º puesto</h3>
+    <p>Primera participación de River Plate Copenhague.</p>
+    <p>18 partidos: 10 ganados, 2 empatados y 6 perdidos.</p>
+    <p>46 goles a favor · 31 en contra · Diferencia +15.</p>
+    <p>Cerramos la temporada con nueve partidos
+       consecutivos sin perder: 7 victorias y 2 empates.</p>
+  </div>
+</div>
 </section>
 
 <hr class="divider">
@@ -256,6 +281,15 @@
   <div class="section-label">Noticias</div>
   <h2 class="section-titulo">Novedades</h2>
   <div class="novedades-grid">
+    </div>
+        <div class="novedad-card">
+        <img src="patanian_embajada.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body"><p class="novedad-fecha">Octubre 2026</p><h3>Recibimos a Matías Patanian, embajador internacional de River Plate, en la Embajada Argentina en Dinamarca.</h3></div>
+    </div>
+      <div class="novedad-card">
+        <img src="liga_dai_2026" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body"><p class="novedad-fecha">Septiembre 2026</p><h3>Finalizamos cuartos en nuestra primera participación en la Liga DAI. Tras un comienzo difícil, cerramos la temporada con nueve partidos consecutivos sin perder.</h3></div>
+    </div>
     <div class="novedad-card">
         <img src="fck.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
       <div class="novedad-body"><p class="novedad-fecha">Mayo 2026</p><h3>Fuimos invitados al último partido de liga del FC København en Parken</h3></div>
