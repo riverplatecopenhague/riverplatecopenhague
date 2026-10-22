@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-556YKPQTEX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-556YKPQTEX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo_redondo_blanco.png">
+<title>River Plate Copenhague</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC0000;--blanco:#FFFFFF;--negro:#0D0D0D;--gris-oscuro:#1A1A1A;--gris-medio:#2A2A2A;--gris-texto:#AAAAAA; }
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--negro);color:var(--blanco);overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(204,0,0,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--blanco);letter-spacing:0.05em}
+  .nav-links{display:flex;gap:1.75rem;list-style:none}
+  .nav-links a{color:var(--gris-texto);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--rojo)}
+  .lang-btn{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:0.3rem 0.75rem;color:var(--gris-texto);text-decoration:none;transition:all 0.2s}
+  .lang-btn:hover{border-color:var(--rojo);color:var(--rojo)}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:80px 2rem 4rem}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(204,0,0,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(204,0,0,0.08) 0%,transparent 50%)}
+  .hero-stripes{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 42px)}
+  .hero-content{position:relative;z-index:1;text-align:center;max-width:800px}
+  .hero-banderas{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.5rem;font-size:1.6rem}
+  .escudo-placeholder{width:120px;height:120px;margin:0 auto 2rem;border-radius:50%;background:radial-gradient(circle,rgba(204,0,0,0.3),transparent);border:2px solid rgba(204,0,0,0.5);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .hero-titulo{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,10vw,7rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:0.5rem}
+  .hero-titulo span{color:var(--rojo);display:block}
+  .hero-lema{font-size:1rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gris-texto);margin-bottom:2rem}
+  .hero-desc{font-size:1.05rem;line-height:1.7;color:#CCCCCC;max-width:560px;margin:0 auto 2.5rem}
+  .hero-redes{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .hero-redes a{display:flex;align-items:center;gap:6px;padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:var(--gris-texto);text-decoration:none;font-size:0.8rem;letter-spacing:0.05em;transition:all 0.2s}
+  .hero-redes a:hover{border-color:var(--rojo);color:var(--rojo);transform:translateY(-2px)}
+  section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+  .section-label{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rojo);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+  .section-label::after{content:'';flex:1;max-width:60px;height:1px;background:var(--rojo)}
+  .section-titulo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:0.03em;margin-bottom:1.5rem;line-height:1}
+  .divider{border:none;border-top:1px solid rgba(255,255,255,0.07);margin:0}
+  .quienes-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .quienes-text p{color:#CCCCCC;line-height:1.8;font-size:1rem;margin-bottom:1rem}
+  .stat-row{display:flex;gap:2rem;margin-top:2rem}
+  .stat{text-align:center}
+  .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--rojo);display:block}
+  .stat-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gris-texto)}
+  .quienes-visual{display:flex;flex-direction:column;gap:1rem}
+  .info-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--rojo);border-radius:4px;padding:1rem 1.25rem}
+  .info-card h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gris-texto);margin-bottom:0.3rem}
+  .info-card p{font-size:0.95rem;color:var(--blanco)}
+  .futbol-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+  .partido-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.5rem}
+  .partido-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;margin-bottom:1rem;color:var(--rojo)}
+  .proximo-partido{background:linear-gradient(135deg,var(--gris-oscuro) 0%,rgba(204,0,0,0.08) 100%);border:1px solid rgba(204,0,0,0.3);border-radius:8px;padding:1.5rem 2rem;grid-column:span 2;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .proximo-info h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.4rem}
+  .proximo-info p{color:var(--gris-texto);font-size:0.9rem;line-height:1.6}
+  .proximo-badge{background:var(--rojo);color:var(--blanco);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;white-space:nowrap}
+  .resultados-tabla{width:100%;border-collapse:collapse}
+  .resultados-tabla td{padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.9rem;color:#CCCCCC}
+  .resultados-tabla td:last-child{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.05em;color:var(--blanco)}
+  .resultado-win{color:#6BBF6B !important}
+  .resultado-loss{color:#CC4444 !important}
+  .resultado-draw{color:#AAAAAA !important}
+  .equipo-placeholder{width:100%;aspect-ratio:16/9;background:var(--gris-medio);border-radius:8px;border:2px dashed rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.85rem;gap:0.5rem}
+  .actividades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+  .actividad-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;transition:border-color 0.2s,transform 0.2s}
+  .actividad-card:hover{border-color:rgba(204,0,0,0.4);transform:translateY(-3px)}
+  .actividad-icon{font-size:1.8rem;margin-bottom:1rem}
+  .actividad-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.04em;margin-bottom:0.5rem}
+  .actividad-card p{font-size:0.88rem;color:var(--gris-texto);line-height:1.6}
+  .actividad-horario{margin-top:1rem;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--rojo)}
+  .novedades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+  .novedad-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;transition:transform 0.2s}
+  .novedad-card:hover{transform:translateY(-3px)}
+  .novedad-img{width:100%;aspect-ratio:16/9;background:var(--gris-medio);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.8rem;text-align:center;padding:1rem}
+  .novedad-body{padding:1.25rem}
+  .novedad-fecha{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--rojo);margin-bottom:0.5rem}
+  .novedad-body h3{font-size:0.95rem;font-weight:500;line-height:1.4;color:var(--blanco)}
+  .cd-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:1.5rem}
+  .cd-card{background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;text-align:center;transition:border-color 0.2s}
+  .cd-card:hover{border-color:rgba(204,0,0,0.4)}
+  .cd-foto{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+  .cd-foto-placeholder{width:100%;aspect-ratio:1;background:var(--gris-medio);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:rgba(255,255,255,0.2)}
+  .cd-info{padding:0.75rem 0.5rem}
+  .cd-nombre{font-size:0.82rem;font-weight:500;color:var(--blanco);line-height:1.3;margin-bottom:0.25rem}
+  .cd-cargo{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--rojo)}
+  .galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.5rem}
+  .galeria-item{aspect-ratio:4/3;background:var(--gris-medio);border-radius:6px;overflow:hidden}
+  .galeria-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+  .galeria-item:hover img{transform:scale(1.05)}
+  .galeria-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gris-texto);font-size:0.8rem;text-align:center;border:1px dashed rgba(255,255,255,0.08);border-radius:6px;padding:1rem}
+  .tienda-wrapper{background:var(--gris-oscuro);border:1px solid rgba(204,0,0,0.2);border-radius:8px;padding:3rem 2rem;text-align:center;margin-top:1.5rem}
+  .tienda-wrapper p{color:var(--gris-texto);margin-top:0.75rem;font-size:0.95rem}
+  .badge-pronto{display:inline-block;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);color:var(--rojo);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 1.2rem;border-radius:20px;margin-bottom:1rem}
+  .contacto-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:1.5rem}
+  .contacto-text p{color:#CCCCCC;line-height:1.8;margin-bottom:1rem}
+  .contacto-links{display:flex;flex-direction:column;gap:0.75rem}
+  .contacto-link{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:var(--gris-oscuro);border:1px solid rgba(255,255,255,0.06);border-radius:6px;text-decoration:none;color:var(--blanco);font-size:0.9rem;transition:all 0.2s}
+  .contacto-link:hover{border-color:var(--rojo);color:var(--rojo)}
+  .contacto-link-icon{font-size:1rem;width:20px;text-align:center}
+  footer{background:var(--gris-oscuro);border-top:1px solid rgba(255,255,255,0.06);padding:2rem}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;color:var(--gris-texto)}
+  .footer-copy{font-size:0.78rem;color:var(--gris-texto)}
+  .footer-redes{display:flex;gap:1.25rem}
+  .footer-redes a{color:var(--gris-texto);text-decoration:none;font-size:0.82rem;transition:color 0.2s}
+  .footer-redes a:hover{color:var(--rojo)}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+  @media(max-width:768px){.nav-links{display:none}.quienes-grid,.futbol-grid,.contacto-wrapper{grid-template-columns:1fr}.proximo-partido{grid-column:span 1;flex-direction:column}.actividades-grid,.novedades-grid{grid-template-columns:1fr}.cd-grid{grid-template-columns:repeat(3,1fr)}.galeria-grid{grid-template-columns:repeat(2,1fr)}}
+.super-banner {
+  margin-top: 56px;
+  background: var(--gris-oscuro);
+  border-bottom: 2px solid var(--rojo);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.super-banner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.super-banner p {
+  color: #CCCCCC;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.super-banner a {
+  background: var(--rojo);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="nav-logo">
+    <img src="logo_redondo_negro_.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">
+    <span class="nav-logo-text">River Plate Copenhague</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#football">Football</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#cd">Board</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="index.html" class="lang-btn">ES</a>
+</nav>
+  
+<!-- START TEMPORARY SUPERCLÁSICO BANNER -->
+<div class="super-banner">
+  <div>
+    <h2>SUPERCLÁSICO: BOCA VS. RIVER</h2>
+    <p>Watch Boca Juniors face River Plate and experience the authentic passion of Argentina’s biggest football rivalry with River fans in Copenhagen.</p>
+    <p>Sunday 1 November · Join us from 15:00 · Kick-off at 19:00 (Copenhagen time)</p>
+    <p>Monumental de Valby · Kulbaneparken · Kulbanevej 16, 2500 Valby</p>
+  </div>
+  <a href="https://wa.me/4531840649" target="_blank">
+    Join us on WhatsApp
+  </a>
+</div>
+<!-- END TEMPORARY SUPERCLÁSICO BANNER -->
+<div id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stripes"></div>
+  <div class="hero-content">
+    <div class="hero-banderas">🇦🇷 ❤️ 🇩🇰</div>
+    <img src="logo_redondo_blanco.png" style="width:120px;height:120px;margin:0 auto 2rem;display:block;filter:drop-shadow(0 0 30px rgba(204,0,0,0.4));animation:float 4s ease-in-out infinite;">
+    <h1 class="hero-titulo">River Plate<br><span>Copenhague</span></h1>
+    <p class="hero-lema">Your colours are our compass</p>
+    <p class="hero-desc">A community of Club Atlético River Plate supporters in Copenhagen, Denmark. Bringing people together through football, sport and Argentine culture.</p>
+    <div class="hero-redes">
+      <a href="https://www.instagram.com/rivercopenhague/" target="_blank">ig Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61577080958220" target="_blank">f Facebook</a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank">in LinkedIn</a>
+      <a href="https://wa.me/4531840649" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section id="about" class="fade-in">
+  <div class="section-label">The association</div>
+  <h2 class="section-titulo">Who we are</h2>
+  <div class="quienes-grid">
+    <div class="quienes-text">
+      <p>River Plate Copenhague is a community of Club Atlético River Plate supporters based in Copenhagen, Denmark. We are a non-profit voluntary association founded by Argentine fans of the club.</p>
+      <p>We organise sporting and social activities and bring River Plate supporters together across Denmark.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-num">2025</span><span class="stat-label">Founded</span></div>
+      </div>
+    </div>
+    <div class="quienes-visual">
+      <div class="info-card"><h4>Registered name</h4><p>River Plate Copenhague</p></div>
+      <div class="info-card"><h4>CVR</h4><p>45647153</p></div>
+      <div class="info-card"><h4>Type of organisation</h4><p>Voluntary association (Forening)</p></div>
+      <div class="info-card"><h4>City</h4><p>Copenhagen, Denmark</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="football" class="fade-in">
+
+  <div class="section-label">Sport</div>
+  <h2 class="section-titulo">Football</h2>
+
+  <style>
+    #football .temporada-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    #football .temporada-foto img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    #football .temporada-foto figcaption {
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    #football .temporada-label {
+      color: #CC0000;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.25rem;
+    }
+
+    #football .temporada-posicion {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    #football .temporada-posicion strong {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 9vw, 8rem);
+      color: #CC0000;
+      line-height: 0.85;
+      font-weight: 400;
+    }
+
+    #football .temporada-posicion span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    #football .temporada-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    #football .temporada-stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.7rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    #football .temporada-stat span {
+      color: #AAAAAA;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #football .temporada-goles {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      color: #CCCCCC;
+      font-size: 0.9rem;
+    }
+
+    #football .temporada-goles strong {
+      color: white;
+    }
+
+    #football .temporada-cierre {
+      margin-top: 2rem;
+      padding-left: 1rem;
+      border-left: 3px solid #CC0000;
+      color: #CCCCCC;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    #football .temporada-cierre strong {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      #football .temporada-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      #football .temporada-posicion strong {
+        font-size: 6rem;
+      }
+    }
+  </style>
+
+  <div class="temporada-layout">
+
+    <!-- TEAM PHOTOGRAPH -->
+    <figure class="temporada-foto">
+      <img src="equipo_futbol.jpg"
+           alt="River Plate Copenhague football team">
+      <figcaption>
+        River Plate Copenhague · 2026 season
+      </figcaption>
+    </figure>
+
+    <!-- SEASON SUMMARY -->
+    <div class="temporada-info">
+
+      <p class="temporada-label">
+        DAI League 2026 · Our first season
+      </p>
+
+      <div class="temporada-posicion">
+        <strong>4th</strong>
+        <span>FINAL<br>POSITION</span>
+      </div>
+
+      <div class="temporada-stats">
+
+        <div class="temporada-stat">
+          <strong>10</strong>
+          <span>Wins</span>
+        </div>
+
+        <div class="temporada-stat">
+          <strong>2</strong>
+          <span>Draws</span>
+        </div>
+
+        <div class="temporada-stat">
+          <strong>6</strong>
+          <span>Losses</span>
+        </div>
+
+      </div>
+
+      <div class="temporada-goles">
+        <span><strong>18</strong> matches</span>
+        <span><strong>46</strong> goals scored</span>
+        <span><strong>31</strong> conceded</span>
+        <span><strong>+15</strong> goal difference</span>
+      </div>
+
+      <p class="temporada-cierre">
+        We ended our first season with
+        <strong>nine consecutive unbeaten matches</strong>, including seven wins and two draws.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<hr class="divider">
+
+<section id="activities" class="fade-in">
+  <div class="section-label">Schedule</div>
+  <h2 class="section-titulo">Activities</h2>
+  <div class="actividades-grid">
+    <div class="actividad-card">
+      <div class="actividad-icon">🏀</div>
+      <h3>Basketball</h3>
+      <p>Recreational basketball at Ørestad Streethal. All skill levels are welcome.</p>
+      <p class="actividad-horario">Fridays · 20:00–22:00</p>
+    </div>
+    <div class="actividad-card">
+      <div class="actividad-icon">🎉</div>
+      <h3>Social events</h3>
+      <p>We watch River Plate matches together, organise asados and share Argentine culture.</p>
+      <p class="actividad-horario">See our event calendar</p>
+    </div>
+     <div class="actividad-card">
+      <div class="actividad-icon">⚽</div>
+      <h3>Football</h3>
+      <p>Mixed football matches in Copenhagen. All skill levels are welcome.</p>
+      <p class="actividad-horario">Saturdays · Time to be confirmed</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="news" class="fade-in">
+  <div class="section-label">Latest updates</div>
+  <h2 class="section-titulo">News</h2>
+
+  <div class="novedades-grid">
+
+    <div class="novedad-card">
+      <img src="patanian_embajada.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">October 2026</p>
+        <h3>We welcomed Matías Patanian, River Plate’s International Ambassador, to the Argentine Embassy in Denmark.</h3>
+      </div>
+    </div>
+
+    <div class="novedad-card">
+      <img src="liga_dai_2026.JPG" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">September 2026</p>
+        <h3>We finished fourth in our first DAI League season, ending the campaign with nine consecutive unbeaten matches.</h3>
+      </div>
+    </div>
+
+    <div class="novedad-card">
+      <img src="fck.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">May 2026</p>
+        <h3>We were invited to FC København’s final league match at Parken</h3>
+      </div>
+    </div>
+
+    <div class="novedad-card">
+      <img src="embajada1.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">April 2026</p>
+        <h3>We celebrated our first anniversary at the Argentine Ambassador’s Residence</h3>
+      </div>
+    </div>
+
+    <div class="novedad-card">
+      <img src="superclasico1.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">April 2026</p>
+        <h3>We watched the Superclásico together with River Plate supporters in Copenhagen</h3>
+      </div>
+    </div>
+
+    <div class="novedad-card">
+      <img src="tango1.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+      <div class="novedad-body">
+        <p class="novedad-fecha">April 2026</p>
+        <h3>We took part in the fourth Copa Tango 86 tournament</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="cd" class="fade-in">
+  <div class="section-label">Organisation</div>
+  <h2 class="section-titulo">Board of Directors</h2>
+
+  <div class="cd-grid">
+
+    <div class="cd-card">
+      <img src="santi.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Santiago Sanchez Godoy</p>
+        <p class="cd-cargo">President</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="dai.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Daiana Martínez Labriola</p>
+        <p class="cd-cargo">Vice President</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="flor.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Florencia Waiskopf</p>
+        <p class="cd-cargo">Vice President</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="marian.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Mariano Remírez</p>
+        <p class="cd-cargo">Secretary</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="juani.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Juan Ignacio Farina</p>
+        <p class="cd-cargo">Treasurer</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="ivan.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Iván Insaurralde</p>
+        <p class="cd-cargo">Board Member</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="martin.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Martín Büchel</p>
+        <p class="cd-cargo">Board Member</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="dami.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Damian Schipani</p>
+        <p class="cd-cargo">Board Member</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="pablo.jpg" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Pablo Calvetti</p>
+        <p class="cd-cargo">Board Member</p>
+      </div>
+    </div>
+
+    <div class="cd-card">
+      <img src="facu.JPG" class="cd-foto">
+      <div class="cd-info">
+        <p class="cd-nombre">Facundo Prado</p>
+        <p class="cd-cargo">Board Member</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="gallery" class="fade-in">
+  <div class="section-label">Our history</div>
+  <h2 class="section-titulo">Gallery</h2>
+  <div class="galeria-grid">
+    <div class="galeria-item"><img src="colores.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="tango2.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="embajada2.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="super2.JPG" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="tango3.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="dhl.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="mundial.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="social.JPG" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="galeria-item"><img src="super3.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- SHOP -->
+<section id="shop" class="fade-in">
+
+  <div class="section-label">Merchandise</div>
+  <h2 class="section-titulo">Shop</h2>
+
+  <style>
+    #shop .tienda-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    #shop .tienda-intro h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #shop .tienda-intro p {
+      color: #AAAAAA;
+      line-height: 1.7;
+    }
+
+    #shop .tienda-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    #shop .tienda-card {
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    #shop .tienda-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #101010;
+    }
+
+    #shop .tienda-card-content {
+      padding: 1.5rem;
+    }
+
+    #shop .tienda-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #shop .tienda-card p {
+      color: #AAAAAA;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    #shop .tienda-boton {
+      display: inline-block;
+      background: #CC0000;
+      color: white;
+      padding: 0.8rem 1.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #shop .tienda-boton:hover {
+      background: #AA0000;
+    }
+
+    #shop .tienda-talles {
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    #shop .tienda-talles summary {
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    #shop .talles-scroll {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    #shop .talles-tabla {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      min-width: 470px;
+    }
+
+    #shop .talles-tabla th,
+    #shop .talles-tabla td {
+      padding: 0.7rem 0.4rem;
+      border-bottom: 1px solid #333;
+      font-size: 0.85rem;
+    }
+
+    #shop .talles-tabla th {
+      color: #CC0000;
+    }
+
+    #shop .talles-nota {
+      color: #AAAAAA;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      #shop .tienda-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="tienda-intro">
+    <h3>Our 2026/27 jerseys</h3>
+    <p>
+      Two exclusive River Plate Copenhague designs. Choose your favourite and wear our colours wherever you go.
+    </p>
+    <p style="color:#CC0000;font-weight:600;margin-top:0.75rem;">
+      Order yours before the Superclásico on 1 November
+    </p>
+  </div>
+
+  <div class="tienda-grid">
+
+    <!-- DESIGN 1 -->
+    <div class="tienda-card">
+      <img src="tienda-home.jpg"
+           alt="River Plate Copenhague Home Tricolor jersey">
+
+      <div class="tienda-card-content">
+        <h3>Design 1 · Home Tricolor</h3>
+        <p>
+          Red, white and black striped jersey. An exclusive River Plate Copenhague design, made by Pioneer. Lightweight, breathable fabric with an embroidered crest. Personalise it with a name and number.
+        </p>
+
+        <a class="tienda-boton"
+           href="https://wa.me/4531840649?text=Hello%2C%20I%20would%20like%20to%20order%20the%20Home%20Tricolor%20jersey"
+           target="_blank" rel="noopener">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- DESIGN 2 -->
+    <div class="tienda-card">
+      <img src="tienda-away.jpg"
+           alt="River Plate Copenhague Away Banda jersey">
+
+      <div class="tienda-card-content">
+        <h3>Design 2 · Away Banda</h3>
+        <p>
+          White jersey with a diagonal black and red sash. An exclusive River Plate Copenhague design, made by Pioneer. Lightweight, breathable fabric with an embroidered crest. Personalise it with a name and number.
+        </p>
+
+        <a class="tienda-boton"
+           href="https://wa.me/4531840649?text=Hello%2C%20I%20would%20like%20to%20order%20the%20Away%20Banda%20jersey"
+           target="_blank" rel="noopener">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIZE GUIDE -->
+  <div class="tienda-talles">
+
+    <details>
+      <summary>View size guide</summary>
+
+      <h3 style="margin-top:1.5rem;">Adults</h3>
+
+      <div class="talles-scroll">
+        <table class="talles-tabla">
+          <thead>
+            <tr>
+              <th>Measurement</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+              <th>2XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chest</td>
+              <td>34–36</td>
+              <td>38–40</td>
+              <td>42–44</td>
+              <td>46–48</td>
+              <td>48–50</td>
+            </tr>
+            <tr>
+              <td>Waist</td>
+              <td>30–32</td>
+              <td>32–34</td>
+              <td>36–38</td>
+              <td>38–40</td>
+              <td>40–42</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:1.5rem;">Children</h3>
+
+      <div class="talles-scroll">
+        <table class="talles-tabla">
+          <thead>
+            <tr>
+              <th>Measurement</th>
+              <th>XS</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Approximate age</td>
+              <td>3–4</td>
+              <td>5–6</td>
+              <td>7–8</td>
+              <td>9–10</td>
+              <td>11–12</td>
+            </tr>
+            <tr>
+              <td>Chest</td>
+              <td>24–26</td>
+              <td>26–28</td>
+              <td>28–30</td>
+              <td>30–32</td>
+              <td>32–34</td>
+            </tr>
+            <tr>
+              <td>Waist</td>
+              <td>20–22</td>
+              <td>22–24</td>
+              <td>24–26</td>
+              <td>26–28</td>
+              <td>28–30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="talles-nota">
+        Measurements in inches. Approximate guide provided by Pioneer.
+      </p>
+
+    </details>
+
+  </div>
+
+</section>
+<!-- END SHOP -->
+
+<hr class="divider">
+
+<section id="contact" class="fade-in">
+  <div class="section-label">Contact</div>
+  <h2 class="section-titulo">Join us</h2>
+  <div class="contacto-wrapper">
+    <div class="contacto-text">
+      <p>Are you a River Plate supporter living in Denmark? Get in touch. We’re an open community and always happy to welcome new people.</p>
+      <p>You can also meet us at our weekly football and basketball activities in Copenhagen.</p>
+    </div>
+    <div class="contacto-links">
+      <a href="mailto:riverplatecopenhague@gmail.com" class="contacto-link"><span class="contacto-link-icon">✉</span><span>riverplatecopenhague@gmail.com</span></a>
+      <a href="https://wa.me/4531840649" target="_blank" class="contacto-link"><span class="contacto-link-icon">💬</span><span>WhatsApp +45 31 84 06 49</span></a>
+      <a href="https://www.instagram.com/rivercopenhague/" target="_blank" class="contacto-link"><span class="contacto-link-icon">ig</span><span>Instagram</span></a>
+      <a href="https://www.facebook.com/profile.php?id=61577080958220" target="_blank" class="contacto-link"><span class="contacto-link-icon">f</span><span>Facebook</span></a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank" class="contacto-link"><span class="contacto-link-icon">in</span><span>LinkedIn</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">River Plate Copenhague — CVR 45647153</span>
+    <span class="footer-copy">© 2025 River Plate Copenhague. Voluntary association.</span>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/rivercopenhague/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61577080958220" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com/company/river-plate-copenhague/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
