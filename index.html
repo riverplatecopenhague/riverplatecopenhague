@@ -420,15 +420,292 @@
 
 <hr class="divider">
 
+<!-- TIENDA -->
 <section id="tienda" class="fade-in">
+
   <div class="section-label">Merchandise</div>
   <h2 class="section-titulo">Tienda</h2>
-  <div class="tienda-wrapper">
-    <div class="badge-pronto">Próximamente</div>
-    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.05em;">Camisetas, bufandas y más</h3>
-    <p>Nuestra tienda online estará disponible pronto. Seguinos en redes para enterarte primero.</p>
+
+  <style>
+    #tienda .tienda-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    #tienda .tienda-intro h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #tienda .tienda-intro p {
+      color: #AAAAAA;
+      line-height: 1.7;
+    }
+
+    #tienda .tienda-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    #tienda .tienda-card {
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    #tienda .tienda-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #101010;
+    }
+
+    #tienda .tienda-card-content {
+      padding: 1.5rem;
+    }
+
+    #tienda .tienda-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #tienda .tienda-card p {
+      color: #AAAAAA;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    #tienda .tienda-boton {
+      display: inline-block;
+      background: #CC0000;
+      color: white;
+      padding: 0.8rem 1.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #tienda .tienda-boton:hover {
+      background: #AA0000;
+    }
+
+    #tienda .tienda-talles {
+      background: #1A1A1A;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    #tienda .tienda-talles summary {
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    #tienda .talles-scroll {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    #tienda .talles-tabla {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      min-width: 470px;
+    }
+
+    #tienda .talles-tabla th,
+    #tienda .talles-tabla td {
+      padding: 0.7rem 0.4rem;
+      border-bottom: 1px solid #333;
+      font-size: 0.85rem;
+    }
+
+    #tienda .talles-tabla th {
+      color: #CC0000;
+    }
+
+    #tienda .talles-nota {
+      color: #AAAAAA;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      #tienda .tienda-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="tienda-intro">
+    <h3>Nuestras camisetas 2026/2027</h3>
+    <p>
+      Dos modelos exclusivos de River Plate Copenhague.
+      Elegí el tuyo y llevá nuestros colores a todas partes.
+    </p>
+    <p style="color:#CC0000;font-weight:600;margin-top:0.75rem;">
+      Pedila antes del Superclásico del 1/11
+    </p>
   </div>
+
+  <div class="tienda-grid">
+
+    <!-- MODELO 1 -->
+    <div class="tienda-card">
+      <img src="tienda-home.jpg"
+           alt="Camiseta Home Tricolor River Plate Copenhague">
+
+      <div class="tienda-card-content">
+        <h3>Modelo 1 · Home Tricolor</h3>
+        <p>
+          Camiseta de franjas rojas, blancas y negras.
+          Diseño exclusivo de River Plate Copenhague,
+          fabricado por Pioneer.
+          Tela ligera y transpirable, con escudo bordado.
+          Personalizable con nombre y número.
+        </p>
+
+        <a class="tienda-boton"
+           href="https://wa.me/4531840649?text=Hola%2C%20quiero%20pedir%20la%20camiseta%20Home%20Tricolor"
+           target="_blank" rel="noopener">
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- MODELO 2 -->
+    <div class="tienda-card">
+      <img src="tienda-away.jpg"
+           alt="Camiseta Away Banda River Plate Copenhague">
+
+      <div class="tienda-card-content">
+        <h3>Modelo 2 · Away Banda</h3>
+        <p>
+          Camiseta blanca con banda diagonal negra y roja.
+          Diseño exclusivo de River Plate Copenhague,
+          fabricado por Pioneer.
+          Tela ligera y transpirable, con escudo bordado.
+          Personalizable con nombre y número.
+        </p>
+
+        <a class="tienda-boton"
+           href="https://wa.me/4531840649?text=Hola%2C%20quiero%20pedir%20la%20camiseta%20Away%20Banda"
+           target="_blank" rel="noopener">
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GUIA DE TALLES -->
+  <div class="tienda-talles">
+
+    <details>
+      <summary>Consultá la guía de talles</summary>
+
+      <h3 style="margin-top:1.5rem;">Adultos</h3>
+
+      <div class="talles-scroll">
+        <table class="talles-tabla">
+          <thead>
+            <tr>
+              <th>Medida</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+              <th>2XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pecho</td>
+              <td>34–36</td>
+              <td>38–40</td>
+              <td>42–44</td>
+              <td>46–48</td>
+              <td>48–50</td>
+            </tr>
+            <tr>
+              <td>Cintura</td>
+              <td>30–32</td>
+              <td>32–34</td>
+              <td>36–38</td>
+              <td>38–40</td>
+              <td>40–42</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:1.5rem;">Niños</h3>
+
+      <div class="talles-scroll">
+        <table class="talles-tabla">
+          <thead>
+            <tr>
+              <th>Medida</th>
+              <th>XS</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Edad orientativa</td>
+              <td>3–4</td>
+              <td>5–6</td>
+              <td>7–8</td>
+              <td>9–10</td>
+              <td>11–12</td>
+            </tr>
+            <tr>
+              <td>Pecho</td>
+              <td>24–26</td>
+              <td>26–28</td>
+              <td>28–30</td>
+              <td>30–32</td>
+              <td>32–34</td>
+            </tr>
+            <tr>
+              <td>Cintura</td>
+              <td>20–22</td>
+              <td>22–24</td>
+              <td>24–26</td>
+              <td>26–28</td>
+              <td>28–30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="talles-nota">
+        Medidas en pulgadas. Referencia orientativa del
+        proveedor Pioneer para Nevis Training Wear.
+        Confirmá las medidas específicas de estas camisetas
+        antes de hacer tu pedido.
+      </p>
+
+    </details>
+
+  </div>
+
 </section>
+<!-- FIN TIENDA -->
 
 <hr class="divider">
 
